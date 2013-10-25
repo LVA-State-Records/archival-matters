@@ -7,7 +7,7 @@
         <?filetitle ?>
         <ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="vi">
 	<eadheader audience="internal" langencoding="iso639-2b" findaidstatus="edited-full-draft">
-        <eadid countrycode="US" mainagencycode="US-Vi">PUBLIC "-//Library of Virginia//TEXT (US::Vi::vi#####::<xsl:text>A Guide to the </xsl:text>
+        	<eadid countrycode="US" mainagencycode="US-Vi">PUBLIC "-//Library of Virginia//TEXT (US::Vi::vi#####::<xsl:text>A Guide to the </xsl:text>
                           <xsl:if test="//marc:record/marc:datafield[@tag=245]">
                             <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='a']/."/>
                           </xsl:if>
@@ -15,7 +15,7 @@
                           <xsl:if test="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']">
                           <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']/."/>
                           </xsl:if>)//EN" "vi.xml"
-</eadid>
+		</eadid>
 
                 <filedesc>
                         <titlestmt>
@@ -371,60 +371,7 @@ aid}?></unitid>
                     </controlaccess>
                 </xsl:for-each>
        </controlaccess>
-
-        <!--This is left empty on purpose-->
-        <dsc type="combined" id="a23">
-                <p>The following section contains a detailed listing of the materials in
-                the collection.</p>
-                <c01 level="series">
-                <did>
-                    <unitid encodinganalog="099"><?xm-replace_text {Unique identifying number or code}?></unitid>
-
-                    <container type="box"><?xm-replace_text {Enter container number if applicable at this level}?></container>
-
-                    <origination><?xm-replace_text {Use persname or corpname to give name of creator if different from parent-level creator}?></origination>
-
-                    <unittitle encodinganalog="245$a"><?xm-replace_text {Title}?></unittitle>
-
-                    <unitdate type="inclusive" encodinganalog="245$f"><?xm-replace_text {Date or range of dates, or "undated"; repeatable}?></unitdate>
-
-                    <physdesc> <extent encodinganalog="300$a"><?xm-replace_text {Quantity}?></extent>
-                            <physfacet encodinganalog="300$b"><?xm-replace_text {Appearance, materials, or techniques if applicable}?></physfacet>
-                            <dimensions encodinganalog="300$c"><?xm-replace_text {Dimensions if applicable}?></dimensions>
-                    </physdesc>
-                </did><phystech>
-                <p><?xm-replace_text {Physical condition or equipment required if applicable}?></p></phystech>
-
-                <scopecontent encodinganalog="520">
-                    <p><?xm-replace_text {Brief description of component being described, such as series}?>
-                    </p>
-                </scopecontent>
-                <c02 level="subseries">
-                    <did>
-                            <unitid encodinganalog="099"><?xm-replace_text {Unique identifying number or code}?></unitid>
-
-                            <container type="box-folder"><?xm-replace_text {Container number}?></container>
-
-                            <origination><?xm-replace_text {Use persname or corpname to give name of creator if different from parent-level creator}?></origination>
-
-                            <unittitle encodinganalog="245$a"><?xm-replace_text {Title}?></unittitle>
-
-                            <unitdate type="inclusive" encodinganalog="245$f"><?xm-replace_text {Date or range of dates, or "undated"; repeatable}?></unitdate>
-
-                            <physdesc> <extent encodinganalog="300$a"><?xm-replace_text {Quantity if applicable}?></extent>
-                            <physfacet encodinganalog="300$b"><?xm-replace_text {Appearance, materials, or techniques if applicable}?></physfacet>
-                            <dimensions encodinganalog="300$c"><?xm-replace_text {Dimensions if applicable}?></dimensions>
-                            </physdesc>
-                    </did><phystech>
-                    <p><?xm-replace_text {Physical condition or equipment required if applicable}?></p></phystech>
-
-                    <scopecontent encodinganalog="520">
-                            <p><?xm-replace_text {Brief description of component being described}?>
-                            </p>
-                    </scopecontent>
-                </c02>
-                </c01>
-            </dsc>
+       
         </archdesc>
     </xsl:template>
 </xsl:stylesheet>
