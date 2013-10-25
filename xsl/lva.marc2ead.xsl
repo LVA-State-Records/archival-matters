@@ -5,12 +5,8 @@
 
 <xsl:template match="/">
         <?filetitle ?>
-        <ead>
-            <!--The following section is header information for web display of the finding aid-->
-            <eadheader langencoding="iso639-2b"
-                scriptencoding="iso15924" relatedencoding="Dublin Core"
-                repositoryencoding="iso15511" countryencoding="iso3166-1"
-                dateencoding="iso8601" id="a0">
+        <ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="">
+	<eadheader audience="internal" langencoding="iso639-2b" findaidstatus="edited-full-draft">
                 <eadid countrycode="us" encodinganalog="Identifier"><?xm-replace_text {Enter the unique identifier for this finding 
 aid}?></eadid>
 
