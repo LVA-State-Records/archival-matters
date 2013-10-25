@@ -46,22 +46,12 @@
 			<date type="publication">&#169; 2013  By The Library of Virginia. All Rights Reserved. 
 			</date> 
 			</publicationstmt>
-                        <notestmt>
-                        <note encodinganalog="Description">
-                            <p>Funding for encoding this finding aid was provided through a grant
-                                    awarded by the National Endowment for the Humanities.</p>
-                        </note>
-                        </notestmt>
                 </filedesc>
 
-
                 <profiledesc>
-                        <creation encodinganalog="Description">Finding aid encoded by MarcEdit
-                        <date era="ce" calendar="gregorian" normal="2003">2003</date></creation>
-
-                        <langusage>Finding aid written in
-                        <language langcode="eng" encodinganalog="Language"
-                        scriptcode="Latn">English.</language></langusage>
+                        <creation>Machine-readable finding aid derived from MARC record using MarcEdit, <date>2013</date></creation>
+                        <langusage>Description is in <language langcode="eng">English</language>
+			</langusage>
                 </profiledesc>
             </eadheader>
                 <xsl:apply-templates/>
