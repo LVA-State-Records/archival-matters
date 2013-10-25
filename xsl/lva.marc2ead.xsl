@@ -156,18 +156,6 @@
                 </physdesc>
             </xsl:for-each>
 
-            <xsl:for-each select="marc:datafield[@tag=254]">
-                <materialspec encodinganalog="254">
-                    <xsl:value-of select="." />
-                </materialspec>
-            </xsl:for-each>
-
-            <xsl:for-each select="marc:datafield[@tag=520]">
-                <abstract encodinganalog="520$a">
-                    <xsl:value-of select="marc:subfield[@code='a']" />
-                </abstract>
-            </xsl:for-each>
-
             <xsl:for-each select="marc:datafield[@tag=852]">
                 <physloc encodinganalog="852$z">
                     <xsl:value-of select="marc:subfield[@code='z']" />
@@ -399,7 +387,11 @@
                     </controlaccess>
                 </xsl:for-each>
        </controlaccess>
-       
+                <xsl:for-each select="marc:datafield[@tag=520]">
+                <scopecontent encodinganalog="520$a">
+                    <xsl:value-of select="marc:subfield[@code='a']" />
+                </scopecontent>
+            </xsl:for-each>
         </archdesc>
     </xsl:template>
 </xsl:stylesheet>
