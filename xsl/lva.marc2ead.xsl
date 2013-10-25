@@ -42,10 +42,11 @@
 			<num type="collectionnumber">
 				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
 				<xsl:value-of select="./marc:subfield[@code='a']/."/>
+				</xsl:for-each>
+				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
 					<xsl:if test="position()!=last()">
 						<xsl:text> ,</xsl:test>
 					</xsl:if>
-				</xsl:for-each>
 			</num>
 			</subtitle>
 
@@ -87,13 +88,14 @@
                         </titleproper>
                         
                         <subtitle id="sort">A Collection in <lb/>the Library of Virginia
-			<num type="Accession Number">
+			<num type="collectionnumber">
 				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
 				<xsl:value-of select="./marc:subfield[@code='a']/."/>
+				</xsl:for-each>
+				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
 					<xsl:if test="position()!=last()">
 						<xsl:text> ,</xsl:test>
 					</xsl:if>
-				</xsl:for-each>
 			</num>
 			</subtitle>
 
