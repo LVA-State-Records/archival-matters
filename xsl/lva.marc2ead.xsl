@@ -39,7 +39,7 @@
                         	<xsl:if test="//marc:record/marc:datafield[@tag=100]">
                         	<xsl:value-of select="//marc:record/marc:datafield[@tag=100]/marc:subfield[@code='a']/."/>
                         	</xsl:if>
-			<num type="collectionnumber">
+			<num type="Accession Number">
                                 <xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
                                 <xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each>
                         </num>
@@ -83,7 +83,7 @@
                         </titleproper>
                         
                         <subtitle id="sort">A Collection in <lb/>the Library of Virginia
-			<num type="collectionnumber">
+			<num type="Accession Number">
                                 <xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
                                 <xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each>
                         </num>
