@@ -138,7 +138,7 @@
 
             <xsl:for-each select="marc:datafield[@tag=110]">
                 <origination label="Creator" encodinganalog="110$a">
-                        <xsl:value-of select="." />
+                        <xsl:value-of select="./marc:subfield[@code='a']/." /> <xsl:value-of select="./marc:subfield[@code='b']/." />
                 </origination>
             </xsl:for-each>
 
