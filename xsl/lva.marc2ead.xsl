@@ -32,7 +32,11 @@
                           </xsl:if>
                         </titleproper>
 
-                        <author encodinganalog="Creator">Finding aid prepared by MarcEdit</author>
+                        <author>
+                        <xsl:if test="//marc:record/marc:datafield[@tag=583]">
+                          <xsl:value-of select="//marc:record/marc:datafield[@tag=583]/marc:subfield[@code='k']/."/>
+                        </xsl:if>
+                        </author>
 
                         </titlestmt>
                         <publicationstmt>
