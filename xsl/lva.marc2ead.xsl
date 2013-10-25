@@ -35,8 +35,7 @@
                         <subtitle id="sort">
 			<num type="collectionnumber">
 				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-				<xsl:text><xsl:value-of select="//marc:record/marc:datafield[@tag=099]/marc:subfield[@code='a']/."/> ,</xsl:text>
-				</xsl:for-each>
+				<xsl:value-of select="//marc:record/marc:datafield[@tag=099]/marc:subfield[@code='a']/."/>, </xsl:for-each>
 			</num>
 			</subtitle>
 
