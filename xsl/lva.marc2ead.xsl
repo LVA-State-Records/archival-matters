@@ -150,9 +150,7 @@
                     </xsl:if>
 
                     <xsl:if test="marc:subfield[@code='f']!=''">
-                        <physfacet encodinganalog="300$f">
-                            <xsl:value-of select="marc:subfield[@code='f']" />
-                        </physfacet>
+                            <xsl:text> <xsl:value-of select="marc:subfield[@code='f']" /></xsl:text>
                     </xsl:if>
 
                 </physdesc>
