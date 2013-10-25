@@ -203,6 +203,8 @@
 
             <xsl:for-each select="marc:datafield[@tag=524]">
                 <prefercite encodinganalog="524">
+                <head>Preferred Citation
+		</head>
                     <p><xsl:value-of select="." /></p>
                 </prefercite>
             </xsl:for-each>
@@ -215,6 +217,8 @@
 
             <xsl:for-each select="marc:datafield[@tag=541]">
                 <acqinfo encodinganalog="541">
+                <head>Acquisition Information
+		</head>
                     <p>Accession <xsl:value-of select="marc:subfield[@code='e']" /> was transferred by <xsl:value-of select="marc:subfield[@code='a']" />, <xsl:value-of select="marc:subfield[@code='b']" />, <xsl:value-of select="marc:subfield[@code='d']" /></p>
                 </acqinfo>
             </xsl:for-each>
