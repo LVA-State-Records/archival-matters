@@ -66,7 +66,7 @@
     </xsl:template>
 
     <xsl:template match="marc:record">
-        <archdesc level="collection" type="inventory" relatedencoding="MARC21">
+        <archdesc level="collection">
             <did id="a1">
 		<p id="logostmt">
 		<extptr xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="http://ead.lib.virginia.edu/vivaead/logos/lva.jpg"/>
