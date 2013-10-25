@@ -138,29 +138,21 @@
 
             <xsl:for-each select="marc:datafield[@tag=110]">
                 <origination label="Creator" encodinganalog="110$a">
-                        <xsl:value-of select="./marc:subfield[@code='a']/." /> <xsl:value-of select="./marc:subfield[@code='b']/." />
+                        <xsl:value-of select="./marc:subfield[@code='a']/." /><xsl:text> </xsl:text><xsl:value-of select="./marc:subfield[@code='b']/." />
                 </origination>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=300]">
-                <physdesc>
+                <physdesc label="Extent" encodinganalog="300$a">
 
                     <xsl:if test="marc:subfield[@code='a']!=''">
-                        <extent encodinganalog="300$a">
-                            <xsl:value-of select="marc:subfield[@code='a']" />
-                        </extent>
+                    <xsl:value-of select="marc:subfield[@code='a']" />
                     </xsl:if>
 
-                    <xsl:if test="marc:subfield[@code='b']!=''">
-                        <physfacet encodinganalog="300$b">
-                            <xsl:value-of select="marc:subfield[@code='b']" />
+                    <xsl:if test="marc:subfield[@code='f']!=''">
+                        <physfacet encodinganalog="300$f">
+                            <xsl:value-of select="marc:subfield[@code='f']" />
                         </physfacet>
-                    </xsl:if>
-
-                    <xsl:if test="marc:subfield[@code='c']!=''">
-                        <dimensions encodinganalog="300$c">
-                            <xsl:value-of select="marc:subfield[@code='c']" />
-                        </dimensions>
                     </xsl:if>
 
                 </physdesc>
