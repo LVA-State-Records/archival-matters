@@ -21,20 +21,27 @@
                         <titlestmt>
                         <titleproper>
                         <xsl:text>A Guide to the </xsl:text>
-                          <xsl:if test="//marc:record/marc:datafield[@tag=245]">
-                            <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='a']/."/>
-                          </xsl:if>
-                          <xsl:text> </xsl:text>
-                          <xsl:if test="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']">
-                            <date>
-                              <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']/."/>
-                            </date>
-                          </xsl:if>
+                        	<xsl:if test="//marc:record/marc:datafield[@tag=245]">
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='a']/."/>
+                        	</xsl:if>
+                        <xsl:text> </xsl:text>
+                        <xsl:if test="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']">
+                        	<date>
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']/."/>
+                        	</date>
+                        </xsl:if>
                         </titleproper>
+                        
+                        <subtitle id="sort">
+			<num type="collectionnumber">
+				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
+				<xsl:value-of select="//marc:record/marc:datafield[@tag=099]/marc:subfield[@code='a']/."/>
+			</num>
+			</subtitle>
 
                         <author>
                         <xsl:if test="//marc:record/marc:datafield[@tag=583]">
-                          <xsl:value-of select="//marc:record/marc:datafield[@tag=583]/marc:subfield[@code='k']/."/>
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=583]/marc:subfield[@code='k']/."/>
                         </xsl:if>
                         </author>
 
