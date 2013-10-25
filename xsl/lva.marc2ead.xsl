@@ -33,8 +33,11 @@
                         </titleproper>
                         
                         <subtitle id="sort">
-                        <xsl:if test="//marc:record/marc:datafield[@tag=245]">
-                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='a']/."/>
+                        <xsl:if test="//marc:record/marc:datafield[@tag=110]">
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=110]/marc:subfield[@code='a']/."/>
+                        	</xsl:if>
+                        	<xsl:if test="//marc:record/marc:datafield[@tag=100]">
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=100]/marc:subfield[@code='a']/."/>
                         	</xsl:if>
 			<num type="collectionnumber">
 				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
