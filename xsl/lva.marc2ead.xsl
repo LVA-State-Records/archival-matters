@@ -121,18 +121,6 @@
 	<did>
 	<head>Descriptive Summary</head>
             <repository label="Repository" encodinganalog="852$a">The Library of Virginia</repository>
-            <unitid encodinganalog="099" countrycode="US">
-            	<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-		<xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each></unitid>
-
-            <xsl:for-each select="marc:datafield[@tag=100]">
-                <origination>
-                    <persname encodinganalog="100" source="lcnaf" role="creator"
-                        rules="AACR2R"><xsl:value-of select="." />
-                    </persname>
-                </origination>
-            </xsl:for-each>
-
             <xsl:for-each select="marc:datafield[@tag=245]">
                 <unittitle encodinganalog="245$a" type="collection">
                     <xsl:value-of select="marc:subfield[@code='a']"/>
@@ -143,6 +131,15 @@
                         <xsl:value-of select="marc:subfield[@code='f']" />
                     </unitdate>
                 </xsl:if>
+            </xsl:for-each>
+            <unitid encodinganalog="099" countrycode="US">
+            	<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
+		<xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each></unitid>
+
+            <xsl:for-each select="marc:datafield[@tag=110]">
+                <origination label="Creator" encodinganalog="110$a">
+                        <xsl:value-of select="." />
+                </origination>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=300]">
