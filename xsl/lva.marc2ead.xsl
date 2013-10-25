@@ -71,8 +71,9 @@
 	<did>
 	<head>Descriptive Summary</head>
             <repository label="Repository" encodinganalog="852$a">The Library of Virginia</repository>
-            <unitid encodinganalog="099" countrycode="us"><?xm-replace_text {Enter the unique identifier for this finding 
-aid}?></unitid>
+            <unitid encodinganalog="099" countrycode="US">
+            	<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
+		<xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each></unitid>
 
             <xsl:for-each select="marc:datafield[@tag=100]">
                 <origination>
