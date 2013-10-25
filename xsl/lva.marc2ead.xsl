@@ -5,7 +5,6 @@
 
 <xsl:template match="/">
         <?filetitle ?>
-        <?xml-model href="http://www.loc.gov/ead/ead.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
         <ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="">
 	<eadheader audience="internal" langencoding="iso639-2b" findaidstatus="edited-full-draft">
                 <eadid countrycode="us" encodinganalog="Identifier"><?xm-replace_text {Enter the unique identifier for this finding 
@@ -14,11 +13,11 @@ aid}?></eadid>
                 <filedesc>
                         <titlestmt>
                         <titleproper encodinganalog="Title">
-                        <xsl:text>Guide to the </xsl:text>
+                        <xsl:text>A Guide to the </xsl:text>
                           <xsl:if test="//marc:record/marc:datafield[@tag=245]">
                             <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='a']/."/>
                           </xsl:if>
-                        <xsl:text> Papers</xsl:text>
+                        <xsl:text> </xsl:text>
                           <xsl:if test="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']">
                             <date encodinganalog="Date">
                               <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']/."/>
