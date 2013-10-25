@@ -150,7 +150,7 @@
                     </xsl:if>
 
                     <xsl:if test="marc:subfield[@code='f']!=''">
-                            <xsl:text> <xsl:value-of select="marc:subfield[@code='f']" /></xsl:text>
+                            <xsl:text> </xsl:text><xsl:value-of select="marc:subfield[@code='f']" />
                     </xsl:if>
 
                 </physdesc>
