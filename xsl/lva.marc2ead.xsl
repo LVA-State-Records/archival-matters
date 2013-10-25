@@ -7,15 +7,13 @@
         <?filetitle ?>
         <ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="vi">
 	<eadheader audience="internal" langencoding="iso639-2b" findaidstatus="edited-full-draft">
-        <eadid countrycode="US" mainagencycode="US-Vi">PUBLIC "-//Library of Virginia//TEXT (US::Vi::vi::<xsl:text>A Guide to the </xsl:text>
+        <eadid countrycode="US" mainagencycode="US-Vi">PUBLIC "-//Library of Virginia//TEXT (US::Vi::vi#####::<xsl:text>A Guide to the </xsl:text>
                           <xsl:if test="//marc:record/marc:datafield[@tag=245]">
                             <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='a']/."/>
                           </xsl:if>
                           <xsl:text> </xsl:text>
                           <xsl:if test="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']">
-                            <date>
-                              <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']/."/>
-                            </date>
+                          <xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']/."/>
                           </xsl:if>)//EN" "vi.xml"
 </eadid>
 
