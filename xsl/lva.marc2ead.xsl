@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
+<xsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="urn:isbn:1-931666-22-9" exclude-result-prefixes="marc">
     <xsl:import href="MARC21slimUtils.xsl"/>
     <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 
 <xsl:template match="/">
         <?filetitle ?>
-        <ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="vi">
+        <ead xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="vi">
 	<eadheader audience="internal" langencoding="iso639-2b" findaidstatus="edited-full-draft">
         	<eadid countrycode="US" mainagencycode="US-Vi">PUBLIC "-//Library of Virginia//TEXT (US::Vi::vi#####::<xsl:text>A Guide to the </xsl:text>
                           <xsl:if test="//marc:record/marc:datafield[@tag=245]">
