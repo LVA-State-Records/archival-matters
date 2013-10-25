@@ -156,27 +156,7 @@
                 </physdesc>
             </xsl:for-each>
 
-            <xsl:for-each select="marc:datafield[@tag=852]">
-                <physloc encodinganalog="852$z">
-                    <xsl:value-of select="marc:subfield[@code='z']" />
-                </physloc>
-            </xsl:for-each>
-
-            <xsl:for-each select="marc:datafield[@tag=546]">
-                <langmaterial>
-                    <language encodinganalog="546">
-                        <xsl:value-of select="." />
-                    </language>
-                </langmaterial>
-            </xsl:for-each>
-
           </did>
-
-            <xsl:for-each select="marc:datafield[@tag=538]">
-                <phystech encodinganalog="538">
-                    <p><xsl:value-of select="." /></p>
-                </phystech>
-            </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=535]">
                 <originalsloc encodinganalog="535">
@@ -185,57 +165,59 @@
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=545]">
-                <bioghist encodinganalog="545" id="a2">
-                    <!--Use heading Historical Note for corporate history-->
+                <bioghist encodinganalog="545">
+                    <head>Biographical/Historical Information</head>
                     <p><xsl:value-of select="." /></p>
                 </bioghist>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=500]">
-                <odd encodinganalog="500" id="a5">
+                <odd encodinganalog="500">
                     <p><xsl:value-of select="." /></p>
                 </odd>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=351]">
-                <arrangement encodinganalog="351" id="a4">
+                <arrangement encodinganalog="351">
                     <p><xsl:value-of select="." /></p>
                 </arrangement>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=530]">
-                <altformavail encodinganalog="530" id="a9">
+                <altformavail encodinganalog="530">
                     <p><xsl:value-of select="." /></p>
                 </altformavail>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=506]">
-                <accessrestrict encodinganalog="506" id="a14">
+                <accessrestrict encodinganalog="506">
                     <p><xsl:value-of select="." /></p>
                 </accessrestrict>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=540]">
-                <userestrict encodinganalog="540" id="a15">
+                <userestrict encodinganalog="540">
                     <p><xsl:value-of select="." /></p>
                 </userestrict>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=524]">
-                <prefercite encodinganalog="524" id="a18">
+                <prefercite encodinganalog="524">
                     <p><xsl:value-of select="." /></p>
                 </prefercite>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=561]">
-                <custodhist encodinganalog="561" id="a16">
+                <custodhist encodinganalog="561">
                     <p><xsl:value-of select="." /></p>
                 </custodhist>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=541]">
-                <acqinfo encodinganalog="541" id="a19">
-                    <p><xsl:value-of select="." /></p>
+                <acqinfo encodinganalog="541">
+                <xsl:if test="//marc:record/marc:datafield[@tag=583]/marc:subfield[@code="b">
+                    <p>Accession <xsl:value-of select="./marc:subfield[@code='e']/."/" /> was transferred by <xsl:value-of select="./marc:subfield[@code='a']/."/" />, <xsl:value-of select="./marc:subfield[@code='b']/."/" />, <xsl:value-of select="./marc:subfield[@code='d']/."/" /></p>
+                </xsl:if>
                 </acqinfo>
             </xsl:for-each>
 
@@ -389,7 +371,7 @@
        </controlaccess>
                 <xsl:for-each select="marc:datafield[@tag=520]">
                 <scopecontent encodinganalog="520$a">
-                    <xsl:value-of select="marc:subfield[@code='a']" />
+                    <p><xsl:value-of select="marc:subfield[@code='a']" /></p>
                 </scopecontent>
             </xsl:for-each>
         </archdesc>
