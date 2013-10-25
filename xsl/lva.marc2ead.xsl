@@ -41,7 +41,11 @@
                         	</xsl:if>
 			<num type="collectionnumber">
 				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-				<xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each>
+				<xsl:value-of select="./marc:subfield[@code='a']/."/>
+					<xsl:if test="position()!=last()">
+						<xsl:text> ,</xsl:test>
+					</xsl:if>
+				</xsl:for-each>
 			</num>
 			</subtitle>
 
@@ -85,7 +89,11 @@
                         <subtitle id="sort">A Collection in <lb/>the Library of Virginia
 			<num type="Accession Number">
 				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-				<xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each>
+				<xsl:value-of select="./marc:subfield[@code='a']/."/>
+					<xsl:if test="position()!=last()">
+						<xsl:text> ,</xsl:test>
+					</xsl:if>
+				</xsl:for-each>
 			</num>
 			</subtitle>
 
@@ -225,28 +233,10 @@
                 </accruals>
             </xsl:for-each>
 
-            <xsl:for-each select="marc:datafield[@tag=583]">
-                <processinfo encodinganalog="583" id="a20">
-                    <p><xsl:value-of select="." /></p>
-                </processinfo>
-            </xsl:for-each>
-
             <xsl:for-each select="marc:datafield[@tag=544]">
                 <separatedmaterial encodinganalog="544 0" id="a7">
                     <p><xsl:value-of select="." /></p>
                 </separatedmaterial>
-            </xsl:for-each>
-
-            <xsl:for-each select="marc:datafield[@tag=581]">
-                <bibliography encodinganalog="581" id="a11">
-                    <p><xsl:value-of select="." /></p>
-                </bibliography>
-            </xsl:for-each>
-
-            <xsl:for-each select = "marc:datafield[@tag=555]">
-                <otherfindaid encodinganalog="555" id="a8">
-                    <p><xsl:value-of select="." /></p>
-                </otherfindaid>
             </xsl:for-each>
 
             <xsl:for-each select="marc:datafield[@tag=544]">
@@ -255,11 +245,7 @@
                 </relatedmaterial>
             </xsl:for-each>
 
-            <controlaccess id="a12">
-                <p>This collection is indexed under the following headings in the online
-                    catalog. Researchers desiring materials about related topics, persons, or
-                    places should search the catalog using these headings.</p>
-
+            <controlaccess>
                 <xsl:for-each select="marc:datafield[@tag=600]">
                     <controlaccess>
                         <famname source="lcnaf" rules="aacr2r" role="subject"
