@@ -36,12 +36,12 @@
 			<num type="collectionnumber">
 				<xsl:choose>
 					<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-					<xsl:otherwise>
-						<xsl:value-of select="//marc:record/marc:datafield[@tag=099]/marc:subfield[@code='a']/."/>, 
-					</xsl:otherwise>
-					<xsl:when>
-						<xsl:value-of select="//marc:record/marc:datafield[@tag=099]/marc:subfield[@code='a']/."/>, </xsl:for-each>
-					</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="//marc:record/marc:datafield[@tag=099]/marc:subfield[@code='a']/."/>, 
+						</xsl:otherwise>
+						<xsl:when>
+							<xsl:value-of select="//marc:record/marc:datafield[@tag=099]/marc:subfield[@code='a']/."/>
+						</xsl:when>
 					</xsl:for-each>
 				</xsl:choose>
 			</num>
