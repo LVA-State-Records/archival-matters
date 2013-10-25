@@ -40,14 +40,9 @@
                         	<xsl:value-of select="//marc:record/marc:datafield[@tag=100]/marc:subfield[@code='a']/."/>
                         	</xsl:if>
 			<num type="collectionnumber">
-				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-				<xsl:value-of select="./marc:subfield[@code='a']/."/>
-				</xsl:for-each>
-				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-					<xsl:if test="position()!=last()">
-						<xsl:text> ,</xsl:test>
-					</xsl:if>
-			</num>
+                                <xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
+                                <xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each>
+                        </num>
 			</subtitle>
 
                         <author>
@@ -89,14 +84,9 @@
                         
                         <subtitle id="sort">A Collection in <lb/>the Library of Virginia
 			<num type="collectionnumber">
-				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-				<xsl:value-of select="./marc:subfield[@code='a']/."/>
-				</xsl:for-each>
-				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
-					<xsl:if test="position()!=last()">
-						<xsl:text> ,</xsl:test>
-					</xsl:if>
-			</num>
+                                <xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
+                                <xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each>
+                        </num>
 			</subtitle>
 
                         <author>
