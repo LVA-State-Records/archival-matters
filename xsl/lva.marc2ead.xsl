@@ -67,6 +67,56 @@
 			</langusage>
                 </profiledesc>
             </eadheader>
+            <frontmatter>
+            	<titlepage>
+            		<titleproper>
+                        <xsl:text>A Guide to the </xsl:text>
+                        	<xsl:if test="//marc:record/marc:datafield[@tag=245]">
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='a']/."/>
+                        	</xsl:if>
+                        <xsl:text> </xsl:text>
+                        <xsl:if test="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']">
+                        	<date>
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=245]/marc:subfield[@code='f']/."/>
+                        	</date>
+                        </xsl:if>
+                        </titleproper>
+                        
+                        <subtitle id="sort">
+                        <xsl:if test="//marc:record/marc:datafield[@tag=110]">
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=110]/marc:subfield[@code='a']/."/>
+                        	</xsl:if>
+                        	<xsl:if test="//marc:record/marc:datafield[@tag=100]">
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=100]/marc:subfield[@code='a']/."/>
+                        	</xsl:if>
+			<num type="collectionnumber">
+				<xsl:for-each select="//marc:record/marc:datafield[@tag=099]">
+				<xsl:value-of select="./marc:subfield[@code='a']/."/>, </xsl:for-each>
+			</num>
+			</subtitle>
+
+                        <author>
+                        <xsl:if test="//marc:record/marc:datafield[@tag=583]">
+                        	<xsl:value-of select="//marc:record/marc:datafield[@tag=583]/marc:subfield[@code='k']/."/>
+                        </xsl:if>
+                        </author>
+                        <p id="logostmt">
+			<extptr xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="http://ead.lib.virginia.edu/vivaead/logos/lva.jpg"/>
+			</p>
+			<publisher>Library of Virginia
+			</publisher>
+			<date type="publication">2013 
+			</date>
+			<list type="deflist">
+			<defitem>
+			<label>Processed by:
+			</label>
+			<item>Library of Virginia Staff.
+			</item>
+			</defitem>
+			</list>
+            	</titlepage>
+            </frontmatter>
                 <xsl:apply-templates/>
         </ead>
     </xsl:template>
