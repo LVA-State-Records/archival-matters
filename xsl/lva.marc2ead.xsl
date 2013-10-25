@@ -40,14 +40,12 @@
 
                         </titlestmt>
                         <publicationstmt>
-                        <publisher encodinganalog="Publisher">Oregon State University Archives</publisher>
-
-                        <address>
-                            <addressline>Corvallis, Oregon  97402</addressline>
-                        </address>
-                        <date encodinganalog="Date"></date>
-
-                        </publicationstmt>
+			<publisher>Library of Virginia
+			</publisher>
+			<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="http://ead.lib.virginia.edu/vivaead/add_con/lva_address.xi.xml" />
+			<date type="publication">&#169; 2013  By The Library of Virginia. All Rights Reserved. 
+			</date> 
+			</publicationstmt>
                         <notestmt>
                         <note encodinganalog="Description">
                             <p>Funding for encoding this finding aid was provided through a grant
