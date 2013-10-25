@@ -215,9 +215,7 @@
 
             <xsl:for-each select="marc:datafield[@tag=541]">
                 <acqinfo encodinganalog="541">
-                <xsl:if test="//marc:record/marc:datafield[@tag=541]/marc:subfield[@code="b">
                     <p>Accession <xsl:value-of select="./marc:subfield[@code='e']/."/" /> was transferred by <xsl:value-of select="./marc:subfield[@code='a']/."/" />, <xsl:value-of select="./marc:subfield[@code='b']/."/" />, <xsl:value-of select="./marc:subfield[@code='d']/."/" /></p>
-                </xsl:if>
                 </acqinfo>
             </xsl:for-each>
 
