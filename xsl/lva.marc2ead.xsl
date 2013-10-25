@@ -67,22 +67,10 @@
 
     <xsl:template match="marc:record">
         <archdesc level="collection">
-            <did id="a1">
-		<p id="logostmt">
-		<extptr xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="http://ead.lib.virginia.edu/vivaead/logos/lva.jpg"/>
-		</p>
-            <repository encodinganalog="852">
-              <corpname encodinganalog="852$a">Oregon State University<subarea encodinganalog="852$b">Archives</subarea></corpname>
-
-              <address>
-                   <addressline>Oregon State University Libraries</addressline>
-                   <addressline>121 Valley Library</addressline>
-                   <addressline>Corvallis, Oregon  97402</addressline>
-                   <addressline>Phone: (541) 737-2165 </addressline>
-                   <addressline>Fax: (541) 737-0541</addressline>
-                   <addressline>http://osulibrary.orst.edu/archives/</addressline>
-
-              </address> </repository>
+            <runner placement="footer">Library of Virginia</runner>
+	<did>
+	<head>Descriptive Summary</head>
+            <repository label="Repository" encodinganalog="852$a">The Library of Virginia</repository>
             <unitid encodinganalog="099" countrycode="us"><?xm-replace_text {Enter the unique identifier for this finding 
 aid}?></unitid>
 
