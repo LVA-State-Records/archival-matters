@@ -1,0 +1,6 @@
+These are XSL stylesheets which will transform MARC records exported from the 
+Library of Virginia's catalog and turn them into brief EAD records (ones with
+no <dsc>) for upload into the Virginia Heritage Project (http://vaheritage.org). 
+They were provided as a part of the MarcEdit program and are designed
+to work with it. The original file was provided under the terms of the CC-0
+license and the adapted file continues under that same license.
