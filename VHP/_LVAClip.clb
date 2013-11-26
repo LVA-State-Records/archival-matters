@@ -141,7 +141,7 @@ H="<eadheader> and <frontmatter>"
 ^!Set %eadid%=^?[(T=C)Vi number:]; %findaidstatus%=^?[(T=C)Finding Aid Status:==_edited-partial-draft|edited-full-draft|unverified-full-draft|unverified-partial-draft]; %titleproper%=^?[(T=C)Title of collection <titleproper>:]; %dates%=^?[(T=C)Dates of collection <date>:]; %titlepropersorttitle%=^?[(T=C)"Sort" title goes here <subtitle>:]; %collectionnumber%=^?[(T=C)Collection/accession number <num>:]; %author%=^?[(T=C)Author of finding aid <author>:]; %encoder%=^?[(T=C)Encoder of finding aid:]; %encodeddate%=^?[(T=C)Date finding aid encoded (e.g. 14 January 2008):]; %processor%=^?[(T=C)Processor of collection:]; %derivedfrom%=^?[(T=C)EAD finding aid:==_derived from MARC record|derived from MS Word|derived from Database|derived from Paper|created in EAD]; %copyrightdate%=^?[(T=C)Year of publication (of finding aid) R:] 
 
 <?xml version="1.0"?>
-<?xml-model href="http://www.loc.gov/ead/ead.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://text.lib.virginia.edu/dtd/eadVIVA/ead-ext.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" title="extended EAD relaxng schema" ?>
 <ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="^%eadid%">
 <eadheader audience="internal" langencoding="iso639-2b" findaidstatus="^%findaidstatus%">
 <eadid countrycode="US" mainagencycode="US-Vi">PUBLIC "-//Library of Virginia//TEXT (US::Vi::^%eadid%::A Guide to the ^%titleproper%, ^%dates%)//EN" "^%eadid%.xml"
