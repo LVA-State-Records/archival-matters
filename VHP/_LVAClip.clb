@@ -25,6 +25,7 @@ This is version 4.1 updated on 15 July 2013.
 3.9 (1 August 2011) Removed extra close container tag
 4.0 (28 July 2013) Switch to RELAX-NG schema.
 4.1 (15 July 2013) File is now hosted in Github, newest version can always be found at https://github.com/uvalib-dcs/VA-Heritage/blob/master/guides%2Btemplates/_VHclip2013
+4.2 (16 December 2013) Branched to create an EAD3 version of LVA's clip library
 H=" "
 
 
