@@ -249,7 +249,7 @@ H="Descriptive Summary"
 </unitid>
 <physloc label="^%physloclabel%">^%physloc%
 </physloc>
-<physdesc label="^%physdesclabel%" encodinganalog="300$a">^%physdesc%
+<physdesc label="^%physdesclabel%" encodinganalog="300$a"><extent>^%physdesc%</extent>
 </physdesc>
 
 <langmaterial label="Language">
