@@ -138,15 +138,15 @@ H=";1. <EADHEADER> AND <FRONTMATTER>"
 
 H="<eadheader> and <frontmatter>"
 
-^!Set %eadid%=^?[(T=C)Vi number:]; %findaidstatus%=^?[(T=C)Finding Aid Status:==_edited-partial-draft|edited-full-draft|unverified-full-draft|unverified-partial-draft]; %titleproper%=^?[(T=C)Title of collection <titleproper>:]; %dates%=^?[(T=C)Dates of collection <date>:]; %titlepropersorttitle%=^?[(T=C)"Sort" title goes here <subtitle>:]; %collectionnumber%=^?[(T=C)Collection/accession number <num>:]; %author%=^?[(T=C)Author of finding aid <author>:]; %encoder%=^?[(T=C)Encoder of finding aid:]; %encodeddate%=^?[(T=C)Date finding aid encoded (e.g. 14 January 2008):]; %processor%=^?[(T=C)Processor of collection:]; %derivedfrom%=^?[(T=C)EAD finding aid:==_derived from MARC record|derived from MS Word|derived from Database|derived from Paper|created in EAD]; %copyrightdate%=^?[(T=C)Year of publication (of finding aid) R:] 
+^!Set %recordid%=^?[(T=C)Vi number:]; %maintenancestatus%=^?[(T=C)Finding Aid Status:==_new|revised|derived|other]; %titleproper%=^?[(T=C)Title of collection <titleproper>:]; %dates%=^?[(T=C)Dates of collection <date>:]; %titlepropersorttitle%=^?[(T=C)"Sort" title goes here <subtitle>:]; %collectionnumber%=^?[(T=C)Collection/accession number <num>:]; %author%=^?[(T=C)Author of finding aid <author>:]; %agenttype%=^?[(T=C)Agent Type:==_human|machine]; %encoder%=^?[(T=C)Encoder of finding aid:]; %encodeddate%=^?[(T=C)Date finding aid encoded (e.g. 14 January 2008):]; %processor%=^?[(T=C)Processor of collection:]; %maintenanceevent%=^?[(T=C)EAD finding aid:==_created|revised|updated|deleted|derived|cancelled]; %copyrightdate%=^?[(T=C)Year of publication (of finding aid) R:] 
 
 <?xml version="1.0"?>
 <?xml-model href="http://text.lib.virginia.edu/dtd/eadVIVA/ead-ext.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" title="extended EAD relaxng schema" ?>
-<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="^%eadid%">
-<eadheader audience="internal" langencoding="iso639-2b" findaidstatus="^%findaidstatus%">
-<eadid countrycode="US" mainagencycode="US-Vi">PUBLIC "-//Library of Virginia//TEXT (US::Vi::^%eadid%::A Guide to the ^%titleproper%, ^%dates%)//EN" "^%eadid%.xml"
-</eadid>
+<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" id="^%recordid%">
 
+<control>
+<recordid>^%recordid%
+</recordid>
 <filedesc>
 
 <titlestmt>
@@ -165,7 +165,7 @@ H="<eadheader> and <frontmatter>"
 
 <publicationstmt>
 <publisher>Library of Virginia
-</publisher><xi:include xmlns:xi="http://www.w3.org/2001/XInclude"  href="http://ead.lib.virginia.edu/vivaead/add_con/lva_address.xi.xml" />
+</publisher><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="http://ead.lib.virginia.edu/vivaead/add_con/lva_address.xi.xml" />
 
 <date type="publication">&#169; ^%copyrightdate% By The Library of Virginia. All Rights Reserved. 
 </date> 
@@ -174,56 +174,32 @@ H="<eadheader> and <frontmatter>"
 
 </filedesc>
 
+<maintenanceagency>
+	<agencycode>US-Vi</agencycode>
+	<agencyname>Library of Virginia</agencyname>
+</maintenanceagency>
 
-<profiledesc>
-<creation>Machine-readable finding aid ^%derivedfrom% by ^%encoder%, <date>^%encodeddate%</date>
-</creation>
-<langusage>Description is in
-<language langcode="eng">English
-</language>
-</langusage>
-</profiledesc>
+<maintenancestatus>^%maintenancestatus%</maintenancestatus>
+<maintenanceHistory>
+	<maintenanceevent>
+		<eventtype>^%maintenanceevent%</eventtype>
+		<agent>^%encoder%</agent>
+		<agenttype>^%agenttype%</agenttype>
+		<eventdatetime>^%encodeddate%</eventdatetime>
+	</maintenanceevent>
+</maintenanceHistory>
 
-</eadheader>
+<languagedeclaration>
+	<language languagecode="eng">English</language>
+        <script scriptcode="Latn">Latin</script>
+</languagedeclaration>
 
+<conventiondeclaration>
+	<abbreviation>DACS</abbreviation>
+        <citation>Describing Archives: A Content Standard, Second Edition, Chicago 2013</citation>
+</conventiondeclaration>
 
-<frontmatter>
-<titlepage>
-<titleproper>A Guide to the ^%titleproper%, <date>^%dates%</date>
-</titleproper>
-
-<subtitle>A Collection in <lb/>the Library of Virginia
-<num type="Accession Number">^%collectionnumber%
-</num>
-</subtitle>
-
-<author>^%author%
-</author>
-
-<p id="logostmt">
-<extptr xlink:actuate="onLoad" xlink:show="embed" xlink:type="simple" xlink:href="http://ead.lib.virginia.edu/vivaead/logos/lva.jpg"/>
-</p>
-
-<publisher>Library of Virginia
-</publisher>
-
-<date type="publication">^%copyrightdate%
-</date>
-
-<list type="deflist">
-<defitem>
-<label>Processed by:
-</label>
-<item>^%processor%
-</item>
-</defitem>
-</list>
-
-</titlepage>
-
-</frontmatter>
-
-
+</control>
 
 H=";"
 
