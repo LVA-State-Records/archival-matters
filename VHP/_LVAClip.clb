@@ -138,7 +138,7 @@ H=";1. <EADHEADER> AND <FRONTMATTER>"
 
 H="<eadheader> and <frontmatter>"
 
-^!Set %recordid%=^?[(T=C)Vi number:]; %maintenancestatus%=^?[(T=C)Finding Aid Status:==_new|revised|derived|other]; %titleproper%=^?[(T=C)Title of collection <titleproper>:]; %dates%=^?[(T=C)Dates of collection <date>:]; %titlepropersorttitle%=^?[(T=C)"Sort" title goes here <subtitle>:]; %collectionnumber%=^?[(T=C)Collection/accession number <num>:]; %author%=^?[(T=C)Author of finding aid <author>:]; %agenttype%=^?[(T=C)Agent Type:==_human|machine]; %encoder%=^?[(T=C)Encoder of finding aid:]; %encodeddate%=^?[(T=C)Date finding aid encoded (e.g. 14 January 2008):]; %processor%=^?[(T=C)Processor of collection:]; %maintenanceevent%=^?[(T=C)EAD finding aid:==_created|revised|updated|deleted|derived|cancelled]; %copyrightdate%=^?[(T=C)Year of publication (of finding aid) R:] 
+^!Set %recordid%=^?[(T=C)Vi number:]; %maintenancestatus%=^?[(T=C)Finding Aid Status:==_new|revised|derived|other]; %titleproper%=^?[(T=C)Title of collection <titleproper>:]; %datetype%=^?[(T=C)Inclusive or Bulk?==_inclusive|bulk]; %dates%=^?[(T=C)Dates of collection <date>:]; %titlepropersorttitle%=^?[(T=C)"Sort" title goes here <subtitle>:]; %collectionnumber%=^?[(T=C)Collection/accession number <num>:]; %author%=^?[(T=C)Author of finding aid <author>:]; %agenttype%=^?[(T=C)Agent Type:==_human|machine]; %encoder%=^?[(T=C)Encoder of finding aid:]; %encodeddate%=^?[(T=C)Date finding aid encoded (e.g. 14 January 2008):]; %processor%=^?[(T=C)Processor of collection:]; %maintenanceevent%=^?[(T=C)EAD finding aid:==_created|revised|updated|deleted|derived|cancelled]; %copyrightdate%=^?[(T=C)Year of publication (of finding aid) R:] 
 
 <?xml version="1.0"?>
 <?xml-model href="http://text.lib.virginia.edu/dtd/eadVIVA/ead-ext.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" title="extended EAD relaxng schema" ?>
@@ -208,17 +208,15 @@ Upper level <did>.  Overview of Collection
 
 H="Descriptive Summary"
 
-^!Set %title%=^?[(T=C)Title of collection <unittitle> R:]; %dates%=^?[(T=C)Inclusive or bulk dates of collection <unitdate> R:]; %datetype%=^?[(T=C)Inclusive or Bulk?==_inclusive|bulk]; %collectionnumber%=^?[(T=C)Collection/accession number<unitid> R:]; %physloclabel%=^?[(T=C)Physical Location Label?==_|Location|Shelf Location|Storage Location]; %physloc%=^?[(T=C)Physical Location Text <physloc> NR:]; %physdesclabel%=^?[(T=C)Physical Description Label?==_Extent|Physical Characteristics|Size|Physical Description]; %physdesc%=^?[(T=C)Extent of collection, in two forms (e.g. cu. ft. and # of boxes)<physdesc> R:]; %abstract%=^?[(T=C)Abstract <abstract> NR:]; %originationlabel%=^?[(T=C)Creator or Collector?==_Creator|Collector]; %originationencodinganalog%=^?[(T=C)MARC Encoding Analog (100 or 110) for Creator or Collector?==_100$a|110$a]; %origination%=^?[(T=C)Creator or collector of collection <origination> NR:]
+^!Set %physloclabel%=^?[(T=C)Physical Location Label?==_|Location|Shelf Location|Storage Location]; %physloc%=^?[(T=C)Physical Location Text <physloc> NR:]; %physdesclabel%=^?[(T=C)Physical Description Label?==_Extent|Physical Characteristics|Size|Physical Description]; %physdesc%=^?[(T=C)Extent of collection, in two forms (e.g. cu. ft. and # of boxes)<physdesc> R:]; %abstract%=^?[(T=C)Abstract <abstract> NR:]; %originationlabel%=^?[(T=C)Creator or Collector?==_Creator|Collector]; %originationencodinganalog%=^?[(T=C)MARC Encoding Analog (100 or 110) for Creator or Collector?==_100$a|110$a]; %origination%=^?[(T=C)Creator or collector of collection <origination> NR:]; %accessrestrict%=^?[(T=C)Access Restrictions <accessrestrict> R:==There are no restrictions.]; %userestrict%=^?[(T=C)Use Restrictions <userestrict> R:==There are no restrictions.]; %prefercite%=^?[(T=C)Preferred Citation <prefercite> R:]; %acqinfo%=^?[(T=C)Acquisition Information <acqinfo> R:]
 
 <archdesc level="collection">
-<runner placement="footer">Library of Virginia
-</runner>
 <did>
 <head>Descriptive Summary
 </head>
 <repository label="Repository" encodinganalog="852$a">The Library of Virginia
 </repository>
-<unittitle label="Title" encodinganalog="245$a">^%title%, 
+<unittitle label="Title" encodinganalog="245$a">^%titleproper%, 
 <unitdate type="^%datetype%" label="Date" encodinganalog="245$f">^%dates%
 </unitdate>
 </unittitle>
@@ -239,20 +237,6 @@ H="Descriptive Summary"
 </origination>
 </did>
 
-
-
-H=";"
-
-H=";3. REQUIRED ADMINISTRATIVE INFORMATION ELEMENTS <DESCGRP>"
-This section records access restrictions, use restrictions, preferred citation, and acquisition information.  ALL REQUIRED ELEMENTS.
-
-H="<descgrp type="admininfo">"
-
-^!Set %accessrestrict%=^?[(T=C)Access Restrictions <accessrestrict> R:==There are no restrictions.]; %userestrict%=^?[(T=C)Use Restrictions <userestrict> R:==There are no restrictions.]; %prefercite%=^?[(T=C)Preferred Citation <prefercite> R:]; %acqinfo%=^?[(T=C)Acquisition Information <acqinfo> R:]
-
-<descgrp type="admininfo">
-<head>Administrative Information
-</head>
 <accessrestrict encodinganalog="506$a">
 <head>Access Restrictions
 </head>
@@ -279,10 +263,9 @@ H="<descgrp type="admininfo">"
 </acqinfo>
 
 
-
 H=";"
 
-H=";3A. OPTIONAL ADMIN. INFO. ELEMENTS"
+H=";3. OPTIONAL ADMIN. INFO. ELEMENTS"
 If you decide to use any of these elements, they must appear in the order in which they are listed.
 
 
@@ -329,16 +312,6 @@ H="Processing Information"
 <p>^?[Type Text Here <processinfo> NR]
 </p>
 </processinfo>
-
-
-H=";" 
-
-H=";3B. CLOSE ADMINISTRATIVE INFO"
-This tag closes the Administrative Information <descgrp type="admininfo">.  
-
-H="Close 3./3A. </descgrp>"
-</descgrp>
-
 
 H=";"
 
