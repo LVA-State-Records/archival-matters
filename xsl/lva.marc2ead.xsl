@@ -58,13 +58,13 @@
 			<publisher>Library of Virginia
 			</publisher>
 			<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="http://ead.lib.virginia.edu/vivaead/add_con/lva_address.xi.xml" />
-			<date type="publication">&#169; 2013  By The Library of Virginia. All Rights Reserved. 
+			<date type="publication">&#169; 2014  By The Library of Virginia. All Rights Reserved. 
 			</date> 
 			</publicationstmt>
                 </filedesc>
 
                 <profiledesc>
-                        <creation>Machine-readable finding aid derived from MARC record using MarcEdit, <date>2013</date></creation>
+                        <creation>Machine-readable finding aid derived from MARC record using MarcEdit, <date>2014</date></creation>
                         <langusage>Description is in <language langcode="eng">English</language>
 			</langusage>
                 </profiledesc>
@@ -101,7 +101,7 @@
 			</p>
 			<publisher>Library of Virginia
 			</publisher>
-			<date type="publication">2013 
+			<date type="publication">2014
 			</date>
 			<list type="deflist">
 			<defitem>
