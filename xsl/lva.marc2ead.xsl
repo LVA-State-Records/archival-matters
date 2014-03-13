@@ -350,6 +350,18 @@
 						</title>
                     </controlaccess>
                 </xsl:for-each>
+                <xsl:for-each select="marc:datafield[@tag=710]">
+                    <controlaccess>
+                        <corpname source="lcnaf" encodinganalog="710">
+							<xsl:for-each select="marc:subfield">
+								<xsl:value-of select="." />
+								<xsl:if test="position()!=last()">
+									<xsl:text> -- </xsl:text>
+								</xsl:if>
+							</xsl:for-each>
+						</corpname>
+                    </controlaccess>
+                </xsl:for-each>
        </controlaccess>
                 <xsl:for-each select="marc:datafield[@tag=520]">
                 <scopecontent encodinganalog="520$a">
