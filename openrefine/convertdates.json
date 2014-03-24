@@ -1,0 +1,28 @@
+[
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column record - header - datestamp using expression value.toDate()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "record - header - datestamp",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column record - header - datestamp using expression grel:value.toString('d MMMM Y')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "record - header - datestamp",
+    "expression": "grel:value.toString('d MMMM Y')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]
