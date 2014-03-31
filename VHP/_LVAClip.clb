@@ -392,29 +392,30 @@ H="Scope and Content (R)"
 H=";"
 
 H=";5. ARRANGEMENT (SERIES LIST)"
-Click on the first clip ("<arrangement><list>") to open the list. Next, add as many item tags as you have series. Fill in one series name (e.g. "Series 1. Correspondence") between each <item> and </item> tag. When the list is complete, 
+Click on the first clip ("<arrangement>") to open the list. If you need a series list, put the cursor within the arragement tags and click on "Series list." Next, add as many item tags as you have series. Fill in one series name (e.g. "Series 1. Correspondence") between each <item> and </item> tag. When the list is complete, click on </list>.  If needed, use the <p></p> tags to add other arrangement/organization info (NOT series descriptions). Make sure all of the information is inside the <arrangement> tags.
 
-click on </list>.  If needed, use the <p></p> tags to add other arrangement/organization info (NOT series descriptions). When finished, click on the "</arrangement>" clip.
-
-H="<arrangement><list>"
+H="<arrangement>"
 
 <arrangement encodinganalog="351">
 <head>Arrangement
 </head>
-<p>This collection is arranged into the following series:</p>
+<p>This collection is arranged </p>
+
+
+</arrangement>
+
+H="Series list"
 <list type="simple">
 
 H="<item>[series name]</item>"
 <item></item>
 
-H="</list>"
+H="Close series list"
 </list>
 
 H="<p></p>add'l arrangement info"
 <p></p>
 
-H="</arrangement>"
-</arrangement>
 
 
 H=";"
