@@ -19,8 +19,8 @@ LDR   L ^^^^^npc^a22^^^^^^a^4500
 541   L $$d10/03/2012 $$e43250 $$aVirginia Dept. of the Treasury $$b101 N. 14th Street, Richmond, VA $$cTransferred.
 545   L $$aThe Treasurer is the custodian of any property presumed abandoned and remitted to the state's custody for safekeeping.  The intangible personal property is retained by the Treasurer after being declared unclaimed, for eventual delivery to the person claiming an interest in said property pursuant to Sections 55-210.20 through 55-210.22 of the Code of Virginia.  Per Library of Virginia retention schedule 152-006, intangible personal property records are retained by the Dept. of Treasury for 20 years and then any records deemed archival are transferred to the Library of Virginia for permanent retention. 
 580   L $$aAgency history record describes the history and functions of the Virginia Dept. of the Treasury. (Search Virginia Dept. of the Treasury as author).
-583   L $$343250 $$aAccessioned $$c 11/08/2012.
-583   L $$343250 $$aDescribed $$c $$k .
+583   L $$350624 $$aAccessioned $$c 11/08/2012.
+583   L $$350624 $$aDescribed $$c $$k .
 60010 L	$$a 
 61010 L $$aVirginia. $$bDept. of the Treasury. $$bDivision of Unclaimed Property. 
 61010 L $$a 
@@ -38,5 +38,5 @@ LDR   L ^^^^^npc^a22^^^^^^a^4500
 7001  L $$a
 7101  L $$a  
 830 0 L $$aState government records collection; $$n50624. 
-8528  L $$aThe Library of Virginia.$$e800 E. Broad St., Richmond, Va. 23219.
+8528  L $$aThe Library of Virginia.$$e800 E. Broad St., Richmond, Va.
 945   L $$a ARM ARC
